@@ -1,0 +1,2583 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Daniel's Data Hacks</title><link href="http://danielsdatahacks.github.io/" rel="alternate"></link><link href="http://danielsdatahacks.github.io/feeds/back.atom.xml" rel="self"></link><id>http://danielsdatahacks.github.io/</id><updated>2018-04-30T12:00:00+02:00</updated><entry><title>Second Post</title><link href="http://danielsdatahacks.github.io/second-post.html" rel="alternate"></link><published>2018-04-30T12:00:00+02:00</published><updated>2018-04-30T12:00:00+02:00</updated><author><name>Daniel</name></author><id>tag:danielsdatahacks.github.io,2018-04-30:second-post.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
+*
+* IPython notebook
+*
+*/
+/* CSS font colors for translated ANSI colors. */
+.ansibold {
+  font-weight: bold;
+}
+/* use dark versions for foreground, to improve visibility */
+.ansiblack {
+  color: black;
+}
+.ansired {
+  color: darkred;
+}
+.ansigreen {
+  color: darkgreen;
+}
+.ansiyellow {
+  color: #c4a000;
+}
+.ansiblue {
+  color: darkblue;
+}
+.ansipurple {
+  color: darkviolet;
+}
+.ansicyan {
+  color: steelblue;
+}
+.ansigray {
+  color: gray;
+}
+/* and light for background, for the same reason */
+.ansibgblack {
+  background-color: black;
+}
+.ansibgred {
+  background-color: red;
+}
+.ansibggreen {
+  background-color: green;
+}
+.ansibgyellow {
+  background-color: yellow;
+}
+.ansibgblue {
+  background-color: blue;
+}
+.ansibgpurple {
+  background-color: magenta;
+}
+.ansibgcyan {
+  background-color: cyan;
+}
+.ansibggray {
+  background-color: gray;
+}
+div.cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  width: 100%;
+  padding: 5px;
+  /* This acts as a spacer between cells, that is outside the border */
+  margin: 0px;
+  outline: none;
+  border-left-width: 1px;
+  padding-left: 5px;
+  background: linear-gradient(to right, transparent -40px, transparent 1px, transparent 1px, transparent 100%);
+}
+div.cell.jupyter-soft-selected {
+  border-left-color: #90CAF9;
+  border-left-color: #E3F2FD;
+  border-left-width: 1px;
+  padding-left: 5px;
+  border-right-color: #E3F2FD;
+  border-right-width: 1px;
+  background: #E3F2FD;
+}
+@media print {
+  div.cell.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected {
+  border-color: #ababab;
+  border-left-width: 0px;
+  padding-left: 6px;
+  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 5px, transparent 5px, transparent 100%);
+}
+@media print {
+  div.cell.selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected.jupyter-soft-selected {
+  border-left-width: 0;
+  padding-left: 6px;
+  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 7px, #E3F2FD 7px, #E3F2FD 100%);
+}
+.edit_mode div.cell.selected {
+  border-color: #66BB6A;
+  border-left-width: 0px;
+  padding-left: 6px;
+  background: linear-gradient(to right, #66BB6A -40px, #66BB6A 5px, transparent 5px, transparent 100%);
+}
+@media print {
+  .edit_mode div.cell.selected {
+    border-color: transparent;
+  }
+}
+.prompt {
+  /* This needs to be wide enough for 3 digit prompt numbers: In[100]: */
+  min-width: 14ex;
+  /* This padding is tuned to match the padding on the CodeMirror editor. */
+  padding: 0.4em;
+  margin: 0px;
+  font-family: monospace;
+  text-align: right;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+  /* Don't highlight prompt number selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Use default cursor */
+  cursor: default;
+}
+@media (max-width: 540px) {
+  .prompt {
+    text-align: left;
+  }
+}
+div.inner_cell {
+  min-width: 0;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_area {
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+  background: #f7f7f7;
+  line-height: 1.21429em;
+}
+/* This is needed so that empty prompt areas can collapse to zero height when there
+   is no content in the output_subarea and the prompt. The main purpose of this is
+   to make sure that empty JavaScript output_subareas have no height. */
+div.prompt:empty {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+div.unrecognized_cell {
+  padding: 5px 5px 5px 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.unrecognized_cell .inner_cell {
+  border-radius: 2px;
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+  border: 1px solid #cfcfcf;
+  background: #eaeaea;
+}
+div.unrecognized_cell .inner_cell a {
+  color: inherit;
+  text-decoration: none;
+}
+div.unrecognized_cell .inner_cell a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+@media (max-width: 540px) {
+  div.unrecognized_cell &gt; div.prompt {
+    display: none;
+  }
+}
+div.code_cell {
+  /* avoid page breaking on code cells when printing */
+}
+@media print {
+  div.code_cell {
+    page-break-inside: avoid;
+  }
+}
+/* any special styling for code cells that are currently running goes here */
+div.input {
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.input {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_prompt {
+  color: #303F9F;
+  border-top: 1px solid transparent;
+}
+div.input_area &gt; div.highlight {
+  margin: 0.4em;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+div.input_area &gt; div.highlight &gt; pre {
+  margin: 0px;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+/* The following gets added to the &lt;head&gt; if it is detected that the user has a
+ * monospace font with inconsistent normal/bold/italic height.  See
+ * notebookmain.js.  Such fonts will have keywords vertically offset with
+ * respect to the rest of the text.  The user should select a better font.
+ * See: https://github.com/ipython/ipython/issues/1503
+ *
+ * .CodeMirror span {
+ *      vertical-align: bottom;
+ * }
+ */
+.CodeMirror {
+  line-height: 1.21429em;
+  /* Changed from 1em to our global default */
+  font-size: 14px;
+  height: auto;
+  /* Changed to auto to autogrow */
+  background: none;
+  /* Changed from white to allow our bg to show through */
+}
+.CodeMirror-scroll {
+  /*  The CodeMirror docs are a bit fuzzy on if overflow-y should be hidden or visible.*/
+  /*  We have found that if it is visible, vertical scrollbars appear with font size changes.*/
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.CodeMirror-lines {
+  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
+  /* we have set a different line-height and want this to scale with that. */
+  padding: 0.4em;
+}
+.CodeMirror-linenumber {
+  padding: 0 8px 0 4px;
+}
+.CodeMirror-gutters {
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+}
+.CodeMirror pre {
+  /* In CM3 this went to 4px from 0 in CM2. We need the 0 value because of how we size */
+  /* .CodeMirror-lines */
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+}
+/*
+
+Original style from softwaremaniacs.org (c) Ivan Sagalaev &lt;Maniac@SoftwareManiacs.Org&gt;
+Adapted from GitHub theme
+
+*/
+.highlight-base {
+  color: #000;
+}
+.highlight-variable {
+  color: #000;
+}
+.highlight-variable-2 {
+  color: #1a1a1a;
+}
+.highlight-variable-3 {
+  color: #333333;
+}
+.highlight-string {
+  color: #BA2121;
+}
+.highlight-comment {
+  color: #408080;
+  font-style: italic;
+}
+.highlight-number {
+  color: #080;
+}
+.highlight-atom {
+  color: #88F;
+}
+.highlight-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.highlight-builtin {
+  color: #008000;
+}
+.highlight-error {
+  color: #f00;
+}
+.highlight-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.highlight-meta {
+  color: #AA22FF;
+}
+/* previously not defined, copying from default codemirror */
+.highlight-def {
+  color: #00f;
+}
+.highlight-string-2 {
+  color: #f50;
+}
+.highlight-qualifier {
+  color: #555;
+}
+.highlight-bracket {
+  color: #997;
+}
+.highlight-tag {
+  color: #170;
+}
+.highlight-attribute {
+  color: #00c;
+}
+.highlight-header {
+  color: blue;
+}
+.highlight-quote {
+  color: #090;
+}
+.highlight-link {
+  color: #00c;
+}
+/* apply the same style to codemirror */
+.cm-s-ipython span.cm-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-atom {
+  color: #88F;
+}
+.cm-s-ipython span.cm-number {
+  color: #080;
+}
+.cm-s-ipython span.cm-def {
+  color: #00f;
+}
+.cm-s-ipython span.cm-variable {
+  color: #000;
+}
+.cm-s-ipython span.cm-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-variable-2 {
+  color: #1a1a1a;
+}
+.cm-s-ipython span.cm-variable-3 {
+  color: #333333;
+}
+.cm-s-ipython span.cm-comment {
+  color: #408080;
+  font-style: italic;
+}
+.cm-s-ipython span.cm-string {
+  color: #BA2121;
+}
+.cm-s-ipython span.cm-string-2 {
+  color: #f50;
+}
+.cm-s-ipython span.cm-meta {
+  color: #AA22FF;
+}
+.cm-s-ipython span.cm-qualifier {
+  color: #555;
+}
+.cm-s-ipython span.cm-builtin {
+  color: #008000;
+}
+.cm-s-ipython span.cm-bracket {
+  color: #997;
+}
+.cm-s-ipython span.cm-tag {
+  color: #170;
+}
+.cm-s-ipython span.cm-attribute {
+  color: #00c;
+}
+.cm-s-ipython span.cm-header {
+  color: blue;
+}
+.cm-s-ipython span.cm-quote {
+  color: #090;
+}
+.cm-s-ipython span.cm-link {
+  color: #00c;
+}
+.cm-s-ipython span.cm-error {
+  color: #f00;
+}
+.cm-s-ipython span.cm-tab {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+div.output_wrapper {
+  /* this position must be relative to enable descendents to be absolute within it */
+  position: relative;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 1;
+}
+/* class for the output area when it should be height-limited */
+div.output_scroll {
+  /* ideally, this would be max-height, but FF barfs all over that */
+  height: 24em;
+  /* FF needs this *and the wrapper* to specify full width, or it will shrinkwrap */
+  width: 100%;
+  overflow: auto;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  display: block;
+}
+/* output div while it is collapsed */
+div.output_collapsed {
+  margin: 0px;
+  padding: 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+div.out_prompt_overlay {
+  height: 100%;
+  padding: 0px 0.4em;
+  position: absolute;
+  border-radius: 2px;
+}
+div.out_prompt_overlay:hover {
+  /* use inner shadow to get border that is computed the same on WebKit/FF */
+  -webkit-box-shadow: inset 0 0 1px #000;
+  box-shadow: inset 0 0 1px #000;
+  background: rgba(240, 240, 240, 0.5);
+}
+div.output_prompt {
+  color: #D84315;
+}
+/* This class is the outer container of all output sections. */
+div.output_area {
+  padding: 0px;
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.output_area .MathJax_Display {
+  text-align: left !important;
+}
+div.output_area 
+div.output_area 
+div.output_area img,
+div.output_area svg {
+  max-width: 100%;
+  height: auto;
+}
+div.output_area img.unconfined,
+div.output_area svg.unconfined {
+  max-width: none;
+}
+/* This is needed to protect the pre formating from global settings such
+   as that of bootstrap */
+.output {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.output_area {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+div.output_area pre {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  color: black;
+  background-color: transparent;
+  border-radius: 0;
+}
+/* This class is for the output subarea inside the output_area and after
+   the prompt div. */
+div.output_subarea {
+  overflow-x: auto;
+  padding: 0.4em;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+  max-width: calc(100% - 14ex);
+}
+div.output_scroll div.output_subarea {
+  overflow-x: visible;
+}
+/* The rest of the output_* classes are for special styling of the different
+   output types */
+/* all text output has this class: */
+div.output_text {
+  text-align: left;
+  color: #000;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+}
+/* stdout/stderr are 'text' as well as 'stream', but execute_result/error are *not* streams */
+div.output_stderr {
+  background: #fdd;
+  /* very light red background for stderr */
+}
+div.output_latex {
+  text-align: left;
+}
+/* Empty output_javascript divs should have no height */
+div.output_javascript:empty {
+  padding: 0;
+}
+.js-error {
+  color: darkred;
+}
+/* raw_input styles */
+div.raw_input_container {
+  line-height: 1.21429em;
+  padding-top: 5px;
+}
+pre.raw_input_prompt {
+  /* nothing needed here. */
+}
+input.raw_input {
+  font-family: monospace;
+  font-size: inherit;
+  color: inherit;
+  width: auto;
+  /* make sure input baseline aligns with prompt */
+  vertical-align: baseline;
+  /* padding + margin = 0.5em between prompt and cursor */
+  padding: 0em 0.25em;
+  margin: 0em 0.25em;
+}
+input.raw_input:focus {
+  box-shadow: none;
+}
+p.p-space {
+  margin-bottom: 10px;
+}
+div.output_unrecognized {
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+}
+div.output_unrecognized a {
+  color: inherit;
+  text-decoration: none;
+}
+div.output_unrecognized a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.rendered_html {
+  color: #000;
+  /* any extras will just be numbers: */
+}
+
+
+
+.rendered_html :link {
+  text-decoration: underline;
+}
+.rendered_html :visited {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+.rendered_html h1:first-child {
+  margin-top: 0.538em;
+}
+.rendered_html h2:first-child {
+  margin-top: 0.636em;
+}
+.rendered_html h3:first-child {
+  margin-top: 0.777em;
+}
+.rendered_html h4:first-child {
+  margin-top: 1em;
+}
+.rendered_html h5:first-child {
+  margin-top: 1em;
+}
+.rendered_html h6:first-child {
+  margin-top: 1em;
+}
+
+
+
+
+
+
+
+
+.rendered_html * + ul {
+  margin-top: 1em;
+}
+.rendered_html * + ol {
+  margin-top: 1em;
+}
+
+
+.rendered_html pre,
+
+
+
+.rendered_html tr,
+.rendered_html th,
+
+.rendered_html td,
+
+
+.rendered_html * + table {
+  margin-top: 1em;
+}
+
+.rendered_html * + p {
+  margin-top: 1em;
+}
+
+.rendered_html * + img {
+  margin-top: 1em;
+}
+.rendered_html img,
+
+.rendered_html img.unconfined,
+
+div.text_cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.text_cell &gt; div.prompt {
+    display: none;
+  }
+}
+div.text_cell_render {
+  /*font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;*/
+  outline: none;
+  resize: none;
+  width: inherit;
+  border-style: none;
+  padding: 0.5em 0.5em 0.5em 0.4em;
+  color: #000;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+a.anchor-link:link {
+  text-decoration: none;
+  padding: 0px 20px;
+  visibility: hidden;
+}
+h1:hover .anchor-link,
+h2:hover .anchor-link,
+h3:hover .anchor-link,
+h4:hover .anchor-link,
+h5:hover .anchor-link,
+h6:hover .anchor-link {
+  visibility: visible;
+}
+.text_cell.rendered .input_area {
+  display: none;
+}
+.text_cell.rendered 
+.text_cell.unrendered .text_cell_render {
+  display: none;
+}
+.cm-header-1,
+.cm-header-2,
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.cm-header-6 {
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.cm-header-1 {
+  font-size: 185.7%;
+}
+.cm-header-2 {
+  font-size: 157.1%;
+}
+.cm-header-3 {
+  font-size: 128.6%;
+}
+.cm-header-4 {
+  font-size: 110%;
+}
+.cm-header-5 {
+  font-size: 100%;
+  font-style: italic;
+}
+.cm-header-6 {
+  font-size: 100%;
+  font-style: italic;
+}
+&lt;/style&gt;
+&lt;style type="text/css"&gt;.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */&lt;/style&gt;
+&lt;style type="text/css"&gt;
+/* Temporary definitions which will become obsolete with Notebook release 5.0 */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+&lt;/style&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;This will be the first post in our new Pelican blog! You can add any code or markdown cells to this Jupyter notebook, and they will be rendered on your blog.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [1]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;random&lt;/span&gt;
+
+&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;randint&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[1]:&lt;/div&gt;
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;12&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[2]:&lt;/div&gt;
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;(array([ 2.,  1.,  1.,  0.,  2.,  0.,  1.,  0.,  0.,  2.]),
+ array([  1. ,   1.9,   2.8,   3.7,   4.6,   5.5,   6.4,   7.3,   8.2,
+          9.1,  10. ]),
+ &amp;lt;a list of 10 Patch objects&amp;gt;)&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_png output_subarea "&gt;
+&lt;img class="img-fluid" src="data:image/png;base64,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
+"/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [3]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;plotly&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;__version__&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;plotly.offline&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;download_plotlyjs&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;init_notebook_mode&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;iplot&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;plotly.graph_objs&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Scatter&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Figure&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Layout&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [4]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;init_notebook_mode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;connected&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_html rendered_html output_subarea "&gt;
+&lt;script&gt;requirejs.config({paths: { 'plotly': ['https://cdn.plot.ly/plotly-latest.min']},});if(!window.Plotly) {{require(['plotly'],function(plotly) {window.Plotly=plotly;});}}&lt;/script&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [5]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;iplot&lt;/span&gt;&lt;span class="p"&gt;([{&lt;/span&gt;&lt;span class="s2"&gt;"x"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="s2"&gt;"y"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;]}])&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_html rendered_html output_subarea "&gt;
+&lt;div class="plotly-graph-div" id="b16f47a0-5b85-4077-87f2-118b87615864" style="height: 525px; width: 100%;"&gt;&lt;/div&gt;&lt;script type="text/javascript"&gt;require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("b16f47a0-5b85-4077-87f2-118b87615864", [{"y": [3, 1, 6], "x": [1, 2, 3]}], {}, {"showLink": true, "linkText": "Export to plot.ly"})});&lt;/script&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['$','$'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        " linebreaks: { automatic: true, width: '95% container' }, " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;
+</summary></entry><entry><title>First Post</title><link href="http://danielsdatahacks.github.io/first-post.html" rel="alternate"></link><published>2018-04-29T12:00:00+02:00</published><updated>2018-04-29T12:00:00+02:00</updated><author><name>Daniel</name></author><id>tag:danielsdatahacks.github.io,2018-04-29:first-post.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
+*
+* IPython notebook
+*
+*/
+/* CSS font colors for translated ANSI colors. */
+.ansibold {
+  font-weight: bold;
+}
+/* use dark versions for foreground, to improve visibility */
+.ansiblack {
+  color: black;
+}
+.ansired {
+  color: darkred;
+}
+.ansigreen {
+  color: darkgreen;
+}
+.ansiyellow {
+  color: #c4a000;
+}
+.ansiblue {
+  color: darkblue;
+}
+.ansipurple {
+  color: darkviolet;
+}
+.ansicyan {
+  color: steelblue;
+}
+.ansigray {
+  color: gray;
+}
+/* and light for background, for the same reason */
+.ansibgblack {
+  background-color: black;
+}
+.ansibgred {
+  background-color: red;
+}
+.ansibggreen {
+  background-color: green;
+}
+.ansibgyellow {
+  background-color: yellow;
+}
+.ansibgblue {
+  background-color: blue;
+}
+.ansibgpurple {
+  background-color: magenta;
+}
+.ansibgcyan {
+  background-color: cyan;
+}
+.ansibggray {
+  background-color: gray;
+}
+div.cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  width: 100%;
+  padding: 5px;
+  /* This acts as a spacer between cells, that is outside the border */
+  margin: 0px;
+  outline: none;
+  border-left-width: 1px;
+  padding-left: 5px;
+  background: linear-gradient(to right, transparent -40px, transparent 1px, transparent 1px, transparent 100%);
+}
+div.cell.jupyter-soft-selected {
+  border-left-color: #90CAF9;
+  border-left-color: #E3F2FD;
+  border-left-width: 1px;
+  padding-left: 5px;
+  border-right-color: #E3F2FD;
+  border-right-width: 1px;
+  background: #E3F2FD;
+}
+@media print {
+  div.cell.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected {
+  border-color: #ababab;
+  border-left-width: 0px;
+  padding-left: 6px;
+  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 5px, transparent 5px, transparent 100%);
+}
+@media print {
+  div.cell.selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected.jupyter-soft-selected {
+  border-left-width: 0;
+  padding-left: 6px;
+  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 7px, #E3F2FD 7px, #E3F2FD 100%);
+}
+.edit_mode div.cell.selected {
+  border-color: #66BB6A;
+  border-left-width: 0px;
+  padding-left: 6px;
+  background: linear-gradient(to right, #66BB6A -40px, #66BB6A 5px, transparent 5px, transparent 100%);
+}
+@media print {
+  .edit_mode div.cell.selected {
+    border-color: transparent;
+  }
+}
+.prompt {
+  /* This needs to be wide enough for 3 digit prompt numbers: In[100]: */
+  min-width: 14ex;
+  /* This padding is tuned to match the padding on the CodeMirror editor. */
+  padding: 0.4em;
+  margin: 0px;
+  font-family: monospace;
+  text-align: right;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+  /* Don't highlight prompt number selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Use default cursor */
+  cursor: default;
+}
+@media (max-width: 540px) {
+  .prompt {
+    text-align: left;
+  }
+}
+div.inner_cell {
+  min-width: 0;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_area {
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+  background: #f7f7f7;
+  line-height: 1.21429em;
+}
+/* This is needed so that empty prompt areas can collapse to zero height when there
+   is no content in the output_subarea and the prompt. The main purpose of this is
+   to make sure that empty JavaScript output_subareas have no height. */
+div.prompt:empty {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+div.unrecognized_cell {
+  padding: 5px 5px 5px 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.unrecognized_cell .inner_cell {
+  border-radius: 2px;
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+  border: 1px solid #cfcfcf;
+  background: #eaeaea;
+}
+div.unrecognized_cell .inner_cell a {
+  color: inherit;
+  text-decoration: none;
+}
+div.unrecognized_cell .inner_cell a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+@media (max-width: 540px) {
+  div.unrecognized_cell &gt; div.prompt {
+    display: none;
+  }
+}
+div.code_cell {
+  /* avoid page breaking on code cells when printing */
+}
+@media print {
+  div.code_cell {
+    page-break-inside: avoid;
+  }
+}
+/* any special styling for code cells that are currently running goes here */
+div.input {
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.input {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_prompt {
+  color: #303F9F;
+  border-top: 1px solid transparent;
+}
+div.input_area &gt; div.highlight {
+  margin: 0.4em;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+div.input_area &gt; div.highlight &gt; pre {
+  margin: 0px;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+/* The following gets added to the &lt;head&gt; if it is detected that the user has a
+ * monospace font with inconsistent normal/bold/italic height.  See
+ * notebookmain.js.  Such fonts will have keywords vertically offset with
+ * respect to the rest of the text.  The user should select a better font.
+ * See: https://github.com/ipython/ipython/issues/1503
+ *
+ * .CodeMirror span {
+ *      vertical-align: bottom;
+ * }
+ */
+.CodeMirror {
+  line-height: 1.21429em;
+  /* Changed from 1em to our global default */
+  font-size: 14px;
+  height: auto;
+  /* Changed to auto to autogrow */
+  background: none;
+  /* Changed from white to allow our bg to show through */
+}
+.CodeMirror-scroll {
+  /*  The CodeMirror docs are a bit fuzzy on if overflow-y should be hidden or visible.*/
+  /*  We have found that if it is visible, vertical scrollbars appear with font size changes.*/
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.CodeMirror-lines {
+  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
+  /* we have set a different line-height and want this to scale with that. */
+  padding: 0.4em;
+}
+.CodeMirror-linenumber {
+  padding: 0 8px 0 4px;
+}
+.CodeMirror-gutters {
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+}
+.CodeMirror pre {
+  /* In CM3 this went to 4px from 0 in CM2. We need the 0 value because of how we size */
+  /* .CodeMirror-lines */
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+}
+/*
+
+Original style from softwaremaniacs.org (c) Ivan Sagalaev &lt;Maniac@SoftwareManiacs.Org&gt;
+Adapted from GitHub theme
+
+*/
+.highlight-base {
+  color: #000;
+}
+.highlight-variable {
+  color: #000;
+}
+.highlight-variable-2 {
+  color: #1a1a1a;
+}
+.highlight-variable-3 {
+  color: #333333;
+}
+.highlight-string {
+  color: #BA2121;
+}
+.highlight-comment {
+  color: #408080;
+  font-style: italic;
+}
+.highlight-number {
+  color: #080;
+}
+.highlight-atom {
+  color: #88F;
+}
+.highlight-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.highlight-builtin {
+  color: #008000;
+}
+.highlight-error {
+  color: #f00;
+}
+.highlight-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.highlight-meta {
+  color: #AA22FF;
+}
+/* previously not defined, copying from default codemirror */
+.highlight-def {
+  color: #00f;
+}
+.highlight-string-2 {
+  color: #f50;
+}
+.highlight-qualifier {
+  color: #555;
+}
+.highlight-bracket {
+  color: #997;
+}
+.highlight-tag {
+  color: #170;
+}
+.highlight-attribute {
+  color: #00c;
+}
+.highlight-header {
+  color: blue;
+}
+.highlight-quote {
+  color: #090;
+}
+.highlight-link {
+  color: #00c;
+}
+/* apply the same style to codemirror */
+.cm-s-ipython span.cm-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-atom {
+  color: #88F;
+}
+.cm-s-ipython span.cm-number {
+  color: #080;
+}
+.cm-s-ipython span.cm-def {
+  color: #00f;
+}
+.cm-s-ipython span.cm-variable {
+  color: #000;
+}
+.cm-s-ipython span.cm-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-variable-2 {
+  color: #1a1a1a;
+}
+.cm-s-ipython span.cm-variable-3 {
+  color: #333333;
+}
+.cm-s-ipython span.cm-comment {
+  color: #408080;
+  font-style: italic;
+}
+.cm-s-ipython span.cm-string {
+  color: #BA2121;
+}
+.cm-s-ipython span.cm-string-2 {
+  color: #f50;
+}
+.cm-s-ipython span.cm-meta {
+  color: #AA22FF;
+}
+.cm-s-ipython span.cm-qualifier {
+  color: #555;
+}
+.cm-s-ipython span.cm-builtin {
+  color: #008000;
+}
+.cm-s-ipython span.cm-bracket {
+  color: #997;
+}
+.cm-s-ipython span.cm-tag {
+  color: #170;
+}
+.cm-s-ipython span.cm-attribute {
+  color: #00c;
+}
+.cm-s-ipython span.cm-header {
+  color: blue;
+}
+.cm-s-ipython span.cm-quote {
+  color: #090;
+}
+.cm-s-ipython span.cm-link {
+  color: #00c;
+}
+.cm-s-ipython span.cm-error {
+  color: #f00;
+}
+.cm-s-ipython span.cm-tab {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+div.output_wrapper {
+  /* this position must be relative to enable descendents to be absolute within it */
+  position: relative;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 1;
+}
+/* class for the output area when it should be height-limited */
+div.output_scroll {
+  /* ideally, this would be max-height, but FF barfs all over that */
+  height: 24em;
+  /* FF needs this *and the wrapper* to specify full width, or it will shrinkwrap */
+  width: 100%;
+  overflow: auto;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  display: block;
+}
+/* output div while it is collapsed */
+div.output_collapsed {
+  margin: 0px;
+  padding: 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+div.out_prompt_overlay {
+  height: 100%;
+  padding: 0px 0.4em;
+  position: absolute;
+  border-radius: 2px;
+}
+div.out_prompt_overlay:hover {
+  /* use inner shadow to get border that is computed the same on WebKit/FF */
+  -webkit-box-shadow: inset 0 0 1px #000;
+  box-shadow: inset 0 0 1px #000;
+  background: rgba(240, 240, 240, 0.5);
+}
+div.output_prompt {
+  color: #D84315;
+}
+/* This class is the outer container of all output sections. */
+div.output_area {
+  padding: 0px;
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.output_area .MathJax_Display {
+  text-align: left !important;
+}
+div.output_area 
+div.output_area 
+div.output_area img,
+div.output_area svg {
+  max-width: 100%;
+  height: auto;
+}
+div.output_area img.unconfined,
+div.output_area svg.unconfined {
+  max-width: none;
+}
+/* This is needed to protect the pre formating from global settings such
+   as that of bootstrap */
+.output {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.output_area {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+div.output_area pre {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  color: black;
+  background-color: transparent;
+  border-radius: 0;
+}
+/* This class is for the output subarea inside the output_area and after
+   the prompt div. */
+div.output_subarea {
+  overflow-x: auto;
+  padding: 0.4em;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+  max-width: calc(100% - 14ex);
+}
+div.output_scroll div.output_subarea {
+  overflow-x: visible;
+}
+/* The rest of the output_* classes are for special styling of the different
+   output types */
+/* all text output has this class: */
+div.output_text {
+  text-align: left;
+  color: #000;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+}
+/* stdout/stderr are 'text' as well as 'stream', but execute_result/error are *not* streams */
+div.output_stderr {
+  background: #fdd;
+  /* very light red background for stderr */
+}
+div.output_latex {
+  text-align: left;
+}
+/* Empty output_javascript divs should have no height */
+div.output_javascript:empty {
+  padding: 0;
+}
+.js-error {
+  color: darkred;
+}
+/* raw_input styles */
+div.raw_input_container {
+  line-height: 1.21429em;
+  padding-top: 5px;
+}
+pre.raw_input_prompt {
+  /* nothing needed here. */
+}
+input.raw_input {
+  font-family: monospace;
+  font-size: inherit;
+  color: inherit;
+  width: auto;
+  /* make sure input baseline aligns with prompt */
+  vertical-align: baseline;
+  /* padding + margin = 0.5em between prompt and cursor */
+  padding: 0em 0.25em;
+  margin: 0em 0.25em;
+}
+input.raw_input:focus {
+  box-shadow: none;
+}
+p.p-space {
+  margin-bottom: 10px;
+}
+div.output_unrecognized {
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+}
+div.output_unrecognized a {
+  color: inherit;
+  text-decoration: none;
+}
+div.output_unrecognized a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.rendered_html {
+  color: #000;
+  /* any extras will just be numbers: */
+}
+
+
+
+.rendered_html :link {
+  text-decoration: underline;
+}
+.rendered_html :visited {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+.rendered_html h1:first-child {
+  margin-top: 0.538em;
+}
+.rendered_html h2:first-child {
+  margin-top: 0.636em;
+}
+.rendered_html h3:first-child {
+  margin-top: 0.777em;
+}
+.rendered_html h4:first-child {
+  margin-top: 1em;
+}
+.rendered_html h5:first-child {
+  margin-top: 1em;
+}
+.rendered_html h6:first-child {
+  margin-top: 1em;
+}
+
+
+
+
+
+
+
+
+.rendered_html * + ul {
+  margin-top: 1em;
+}
+.rendered_html * + ol {
+  margin-top: 1em;
+}
+
+
+.rendered_html pre,
+
+
+
+.rendered_html tr,
+.rendered_html th,
+
+.rendered_html td,
+
+
+.rendered_html * + table {
+  margin-top: 1em;
+}
+
+.rendered_html * + p {
+  margin-top: 1em;
+}
+
+.rendered_html * + img {
+  margin-top: 1em;
+}
+.rendered_html img,
+
+.rendered_html img.unconfined,
+
+div.text_cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.text_cell &gt; div.prompt {
+    display: none;
+  }
+}
+div.text_cell_render {
+  /*font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;*/
+  outline: none;
+  resize: none;
+  width: inherit;
+  border-style: none;
+  padding: 0.5em 0.5em 0.5em 0.4em;
+  color: #000;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+a.anchor-link:link {
+  text-decoration: none;
+  padding: 0px 20px;
+  visibility: hidden;
+}
+h1:hover .anchor-link,
+h2:hover .anchor-link,
+h3:hover .anchor-link,
+h4:hover .anchor-link,
+h5:hover .anchor-link,
+h6:hover .anchor-link {
+  visibility: visible;
+}
+.text_cell.rendered .input_area {
+  display: none;
+}
+.text_cell.rendered 
+.text_cell.unrendered .text_cell_render {
+  display: none;
+}
+.cm-header-1,
+.cm-header-2,
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.cm-header-6 {
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.cm-header-1 {
+  font-size: 185.7%;
+}
+.cm-header-2 {
+  font-size: 157.1%;
+}
+.cm-header-3 {
+  font-size: 128.6%;
+}
+.cm-header-4 {
+  font-size: 110%;
+}
+.cm-header-5 {
+  font-size: 100%;
+  font-style: italic;
+}
+.cm-header-6 {
+  font-size: 100%;
+  font-style: italic;
+}
+&lt;/style&gt;
+&lt;style type="text/css"&gt;.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */&lt;/style&gt;
+&lt;style type="text/css"&gt;
+/* Temporary definitions which will become obsolete with Notebook release 5.0 */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+&lt;/style&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;This will be the first post in our new Pelican blog! You can add any code or markdown cells to this Jupyter notebook, and they will be rendered on your blog.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [34]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;random&lt;/span&gt;
+
+&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;randint&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[34]:&lt;/div&gt;
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;78&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[35]:&lt;/div&gt;
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;(array([ 2.,  1.,  1.,  0.,  2.,  0.,  1.,  0.,  0.,  2.]),
+ array([  1. ,   1.9,   2.8,   3.7,   4.6,   5.5,   6.4,   7.3,   8.2,
+          9.1,  10. ]),
+ &amp;lt;a list of 10 Patch objects&amp;gt;)&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_png output_subarea "&gt;
+&lt;img class="img-fluid" src="data:image/png;base64,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
+"/&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [36]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;plotly&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;__version__&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;plotly.offline&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;download_plotlyjs&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;init_notebook_mode&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;iplot&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;plotly.graph_objs&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Scatter&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Figure&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Layout&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [37]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;init_notebook_mode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;connected&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_html rendered_html output_subarea "&gt;
+&lt;script&gt;requirejs.config({paths: { 'plotly': ['https://cdn.plot.ly/plotly-latest.min']},});if(!window.Plotly) {{require(['plotly'],function(plotly) {window.Plotly=plotly;});}}&lt;/script&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [38]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;iplot&lt;/span&gt;&lt;span class="p"&gt;([{&lt;/span&gt;&lt;span class="s2"&gt;"x"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="s2"&gt;"y"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;]}])&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_html rendered_html output_subarea "&gt;
+&lt;div class="plotly-graph-div" id="b51535f1-0797-41ca-9c54-a4cff05c6740" style="height: 525px; width: 100%;"&gt;&lt;/div&gt;&lt;script type="text/javascript"&gt;require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("b51535f1-0797-41ca-9c54-a4cff05c6740", [{"x": [1, 2, 3], "y": [3, 1, 6]}], {}, {"linkText": "Export to plot.ly", "showLink": true})});&lt;/script&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Check-whether-maps-work!"&gt;Check whether maps work!&lt;a class="anchor-link" href="#Check-whether-maps-work!"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [39]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;folium&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;IPython.display&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;HTML&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [40]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;map&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;folium&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Map&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;location&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mf"&gt;37.76&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mf"&gt;122.45&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="n"&gt;folium&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Marker&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mf"&gt;37.76&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mf"&gt;122.45&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;popup&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'Solar Power Station'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_to&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;map&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;display&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;map&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_html rendered_html output_subarea "&gt;
+&lt;div style="width:100%;"&gt;&lt;div style="position:relative;width:100%;height:0;padding-bottom:60%;"&gt;&lt;iframe allowfullscreen="" mozallowfullscreen="" src="data:text/html;charset=utf-8;base64,PCFET0NUWVBFIGh0bWw+CjxoZWFkPiAgICAKICAgIDxtZXRhIGh0dHAtZXF1aXY9ImNvbnRlbnQtdHlwZSIgY29udGVudD0idGV4dC9odG1sOyBjaGFyc2V0PVVURi04IiAvPgogICAgPHNjcmlwdD5MX1BSRUZFUl9DQU5WQVM9ZmFsc2U7IExfTk9fVE9VQ0g9ZmFsc2U7IExfRElTQUJMRV8zRD1mYWxzZTs8L3NjcmlwdD4KICAgIDxzY3JpcHQgc3JjPSJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvbnBtL2xlYWZsZXRAMS4yLjAvZGlzdC9sZWFmbGV0LmpzIj48L3NjcmlwdD4KICAgIDxzY3JpcHQgc3JjPSJodHRwczovL2FqYXguZ29vZ2xlYXBpcy5jb20vYWpheC9saWJzL2pxdWVyeS8xLjExLjEvanF1ZXJ5Lm1pbi5qcyI+PC9zY3JpcHQ+CiAgICA8c2NyaXB0IHNyYz0iaHR0cHM6Ly9tYXhjZG4uYm9vdHN0cmFwY2RuLmNvbS9ib290c3RyYXAvMy4yLjAvanMvYm9vdHN0cmFwLm1pbi5qcyI+PC9zY3JpcHQ+CiAgICA8c2NyaXB0IHNyYz0iaHR0cHM6Ly9jZG5qcy5jbG91ZGZsYXJlLmNvbS9hamF4L2xpYnMvTGVhZmxldC5hd2Vzb21lLW1hcmtlcnMvMi4wLjIvbGVhZmxldC5hd2Vzb21lLW1hcmtlcnMuanMiPjwvc2NyaXB0PgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvbnBtL2xlYWZsZXRAMS4yLjAvZGlzdC9sZWFmbGV0LmNzcyIvPgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL21heGNkbi5ib290c3RyYXBjZG4uY29tL2Jvb3RzdHJhcC8zLjIuMC9jc3MvYm9vdHN0cmFwLm1pbi5jc3MiLz4KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iaHR0cHM6Ly9tYXhjZG4uYm9vdHN0cmFwY2RuLmNvbS9ib290c3RyYXAvMy4yLjAvY3NzL2Jvb3RzdHJhcC10aGVtZS5taW4uY3NzIi8+CiAgICA8bGluayByZWw9InN0eWxlc2hlZXQiIGhyZWY9Imh0dHBzOi8vbWF4Y2RuLmJvb3RzdHJhcGNkbi5jb20vZm9udC1hd2Vzb21lLzQuNi4zL2Nzcy9mb250LWF3ZXNvbWUubWluLmNzcyIvPgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL2NkbmpzLmNsb3VkZmxhcmUuY29tL2FqYXgvbGlicy9MZWFmbGV0LmF3ZXNvbWUtbWFya2Vycy8yLjAuMi9sZWFmbGV0LmF3ZXNvbWUtbWFya2Vycy5jc3MiLz4KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iaHR0cHM6Ly9yYXdnaXQuY29tL3B5dGhvbi12aXN1YWxpemF0aW9uL2ZvbGl1bS9tYXN0ZXIvZm9saXVtL3RlbXBsYXRlcy9sZWFmbGV0LmF3ZXNvbWUucm90YXRlLmNzcyIvPgogICAgPHN0eWxlPmh0bWwsIGJvZHkge3dpZHRoOiAxMDAlO2hlaWdodDogMTAwJTttYXJnaW46IDA7cGFkZGluZzogMDt9PC9zdHlsZT4KICAgIDxzdHlsZT4jbWFwIHtwb3NpdGlvbjphYnNvbHV0ZTt0b3A6MDtib3R0b206MDtyaWdodDowO2xlZnQ6MDt9PC9zdHlsZT4KICAgIAogICAgPHN0eWxlPiNtYXBfNzVhNGUwMGVkOTM2NGEwZGFiZjNjZWNmMjE1MjZlOGMgewogICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTsKICAgICAgICB3aWR0aDogMTAwLjAlOwogICAgICAgIGhlaWdodDogMTAwLjAlOwogICAgICAgIGxlZnQ6IDAuMCU7CiAgICAgICAgdG9wOiAwLjAlOwogICAgICAgIH0KICAgIDwvc3R5bGU+CjwvaGVhZD4KPGJvZHk+ICAgIAogICAgCiAgICA8ZGl2IGNsYXNzPSJmb2xpdW0tbWFwIiBpZD0ibWFwXzc1YTRlMDBlZDkzNjRhMGRhYmYzY2VjZjIxNTI2ZThjIiA+PC9kaXY+CjwvYm9keT4KPHNjcmlwdD4gICAgCiAgICAKICAgIAogICAgICAgIHZhciBib3VuZHMgPSBudWxsOwogICAgCgogICAgdmFyIG1hcF83NWE0ZTAwZWQ5MzY0YTBkYWJmM2NlY2YyMTUyNmU4YyA9IEwubWFwKAogICAgICAgICdtYXBfNzVhNGUwMGVkOTM2NGEwZGFiZjNjZWNmMjE1MjZlOGMnLCB7CiAgICAgICAgY2VudGVyOiBbMzcuNzYsIC0xMjIuNDVdLAogICAgICAgIHpvb206IDEwLAogICAgICAgIG1heEJvdW5kczogYm91bmRzLAogICAgICAgIGxheWVyczogW10sCiAgICAgICAgd29ybGRDb3B5SnVtcDogZmFsc2UsCiAgICAgICAgY3JzOiBMLkNSUy5FUFNHMzg1NywKICAgICAgICB6b29tQ29udHJvbDogdHJ1ZSwKICAgICAgICB9KTsKCiAgICAKICAgIAogICAgdmFyIHRpbGVfbGF5ZXJfZmVkMDYxMTQ5ZmJkNGU0ZGE3YmUwYzlmYmM5NmJiOTIgPSBMLnRpbGVMYXllcigKICAgICAgICAnaHR0cHM6Ly97c30udGlsZS5vcGVuc3RyZWV0bWFwLm9yZy97en0ve3h9L3t5fS5wbmcnLAogICAgICAgIHsKICAgICAgICAiYXR0cmlidXRpb24iOiBudWxsLAogICAgICAgICJkZXRlY3RSZXRpbmEiOiBmYWxzZSwKICAgICAgICAibWF4TmF0aXZlWm9vbSI6IDE4LAogICAgICAgICJtYXhab29tIjogMTgsCiAgICAgICAgIm1pblpvb20iOiAwLAogICAgICAgICJub1dyYXAiOiBmYWxzZSwKICAgICAgICAic3ViZG9tYWlucyI6ICJhYmMiCn0pLmFkZFRvKG1hcF83NWE0ZTAwZWQ5MzY0YTBkYWJmM2NlY2YyMTUyNmU4Yyk7CiAgICAKICAgICAgICB2YXIgbWFya2VyXzZhNTQxZTk2NTYzNjQ1YzY5MTAzZDExYzM2MjU1MTEwID0gTC5tYXJrZXIoCiAgICAgICAgICAgIFszNy43NiwgLTEyMi40NV0sCiAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgIGljb246IG5ldyBMLkljb24uRGVmYXVsdCgpCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICkuYWRkVG8obWFwXzc1YTRlMDBlZDkzNjRhMGRhYmYzY2VjZjIxNTI2ZThjKTsKICAgICAgICAKICAgIAogICAgICAgICAgICB2YXIgcG9wdXBfY2YxMmUxMzU0YzgxNGJiZDkxMzM4NDliZmE2NjZjNDYgPSBMLnBvcHVwKHttYXhXaWR0aDogJzMwMCcKICAgICAgICAgICAgCiAgICAgICAgICAgIH0pOwoKICAgICAgICAgICAgCiAgICAgICAgICAgICAgICB2YXIgaHRtbF8yZDlkNzZmNDNhZDc0ZGViOWE1NWMyYTE5MmY1YjQ5YiA9ICQoJzxkaXYgaWQ9Imh0bWxfMmQ5ZDc2ZjQzYWQ3NGRlYjlhNTVjMmExOTJmNWI0OWIiIHN0eWxlPSJ3aWR0aDogMTAwLjAlOyBoZWlnaHQ6IDEwMC4wJTsiPlNvbGFyIFBvd2VyIFN0YXRpb248L2Rpdj4nKVswXTsKICAgICAgICAgICAgICAgIHBvcHVwX2NmMTJlMTM1NGM4MTRiYmQ5MTMzODQ5YmZhNjY2YzQ2LnNldENvbnRlbnQoaHRtbF8yZDlkNzZmNDNhZDc0ZGViOWE1NWMyYTE5MmY1YjQ5Yik7CiAgICAgICAgICAgIAoKICAgICAgICAgICAgbWFya2VyXzZhNTQxZTk2NTYzNjQ1YzY5MTAzZDExYzM2MjU1MTEwLmJpbmRQb3B1cChwb3B1cF9jZjEyZTEzNTRjODE0YmJkOTEzMzg0OWJmYTY2NmM0NikKICAgICAgICAgICAgOwoKICAgICAgICAgICAgCiAgICAgICAgCjwvc2NyaXB0Pg==" style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" webkitallowfullscreen=""&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [41]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;matplotlib&lt;/span&gt; inline
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;__future__&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;print_function&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;ipywidgets&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;interact&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;interactive&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;fixed&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;interact_manual&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;ipywidgets&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;widgets&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [42]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [43]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [46]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;interact&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div id="e016d215-2ea5-4877-94e6-89a5f745f0a8"&gt;&lt;/div&gt;
+&lt;div class="output_subarea output_widget_view "&gt;
+&lt;script type="text/javascript"&gt;
+var element = $('#e016d215-2ea5-4877-94e6-89a5f745f0a8');
+&lt;/script&gt;
+&lt;script type="application/vnd.jupyter.widget-view+json"&gt;
+{"version_major": 2, "model_id": "fa234cad0cfa47779d7e316d7d87398b", "version_minor": 0}
+&lt;/script&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [47]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;interact&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div id="91af29d7-ce50-48e1-b839-1f24883a789e"&gt;&lt;/div&gt;
+&lt;div class="output_subarea output_widget_view "&gt;
+&lt;script type="text/javascript"&gt;
+var element = $('#91af29d7-ce50-48e1-b839-1f24883a789e');
+&lt;/script&gt;
+&lt;script type="application/vnd.jupyter.widget-view+json"&gt;
+{"version_major": 2, "model_id": "789c97ca4770488b90ce1ce95242741c", "version_minor": 0}
+&lt;/script&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [29]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;ipywidgets&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;IntSlider&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;ipywidgets.embed&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;embed_minimal_html&lt;/span&gt;
+
+&lt;span class="n"&gt;slider&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;IntSlider&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;40&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="c1"&gt;#embed_minimal_html('export.html', views=[slider], title='Widgets export')&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [48]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;slider&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div id="d32f9d16-5fc1-44c8-93e8-b336b1a50289"&gt;&lt;/div&gt;
+&lt;div class="output_subarea output_widget_view "&gt;
+&lt;script type="text/javascript"&gt;
+var element = $('#d32f9d16-5fc1-44c8-93e8-b336b1a50289');
+&lt;/script&gt;
+&lt;script type="application/vnd.jupyter.widget-view+json"&gt;
+{"version_major": 2, "model_id": "d88235ee8ba0496195f4df562a62b037", "version_minor": 0}
+&lt;/script&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [49]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;ipywidgets&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;widgets&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;IPython.display&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;display&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;ipywidgets&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;interactive&lt;/span&gt;
+
+&lt;span class="n"&gt;items&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'All'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'NotAll'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;view&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;''&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="s1"&gt;'All'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;items&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+
+&lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;widgets&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Select&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;options&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;items&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;interactive&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;view&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div id="aceb3af7-9959-4799-90e0-495c6b5e390e"&gt;&lt;/div&gt;
+&lt;div class="output_subarea output_widget_view "&gt;
+&lt;script type="text/javascript"&gt;
+var element = $('#aceb3af7-9959-4799-90e0-495c6b5e390e');
+&lt;/script&gt;
+&lt;script type="application/vnd.jupyter.widget-view+json"&gt;
+{"version_major": 2, "model_id": "6c69d3feed99494bb9fa21873282e08f", "version_minor": 0}
+&lt;/script&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [50]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;ipywidgets&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;IntSlider&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;ipywidgets.embed&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;embed_minimal_html&lt;/span&gt;
+
+&lt;span class="n"&gt;slider&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;IntSlider&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;40&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;embed_minimal_html&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'export.html'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;views&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;slider&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'Widgets export'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [56]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;ipywidgets.embed&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;embed_minimal_html&lt;/span&gt;
+
+&lt;span class="c1"&gt;#slider = IntSlider(value=40)&lt;/span&gt;
+&lt;span class="c1"&gt;#embed_minimal_html('export.html', views=[slider], title='Widgets export')&lt;/span&gt;
+
+&lt;span class="c1"&gt;#Interactive output&lt;/span&gt;
+&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;widgets&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;IntSlider&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;description&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'a'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;widgets&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;IntSlider&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;description&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'b'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;widgets&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;IntSlider&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;description&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'c'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt;&lt;span class="si"&gt;{}&lt;/span&gt;&lt;span class="s1"&gt;*&lt;/span&gt;&lt;span class="si"&gt;{}&lt;/span&gt;&lt;span class="s1"&gt;*&lt;/span&gt;&lt;span class="si"&gt;{}&lt;/span&gt;&lt;span class="s1"&gt;=&lt;/span&gt;&lt;span class="si"&gt;{}&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+&lt;span class="n"&gt;out&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;widgets&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;interactive_output&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;'a'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'b'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'c'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
+
+&lt;span class="n"&gt;test&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;widgets&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;HBox&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;widgets&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;VBox&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;]),&lt;/span&gt; &lt;span class="n"&gt;out&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="n"&gt;embed_minimal_html&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'export.html'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;views&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;out&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'Widgets export'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [55]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;display&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div id="f5280434-d69b-4c3e-b45a-0d4096e147b7"&gt;&lt;/div&gt;
+&lt;div class="output_subarea output_widget_view "&gt;
+&lt;script type="text/javascript"&gt;
+var element = $('#f5280434-d69b-4c3e-b45a-0d4096e147b7');
+&lt;/script&gt;
+&lt;script type="application/vnd.jupyter.widget-view+json"&gt;
+{"version_major": 2, "model_id": "d66865e7231847b3b2e2f0b0d6322e09", "version_minor": 0}
+&lt;/script&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [60]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;json&lt;/span&gt;
+
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;ipywidgets&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;IntSlider&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;ipywidgets.embed&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;embed_data&lt;/span&gt;
+&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;widgets&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;IntSlider&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;description&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'a'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;widgets&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;IntSlider&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;description&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'b'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;widgets&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;IntSlider&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;description&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'c'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt;&lt;span class="si"&gt;{}&lt;/span&gt;&lt;span class="s1"&gt;*&lt;/span&gt;&lt;span class="si"&gt;{}&lt;/span&gt;&lt;span class="s1"&gt;*&lt;/span&gt;&lt;span class="si"&gt;{}&lt;/span&gt;&lt;span class="s1"&gt;=&lt;/span&gt;&lt;span class="si"&gt;{}&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+&lt;span class="n"&gt;out&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;widgets&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;interactive_output&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;'a'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'b'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'c'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
+
+&lt;span class="n"&gt;test&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;widgets&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;HBox&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;widgets&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;VBox&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;]),&lt;/span&gt; &lt;span class="n"&gt;out&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;embed_data&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;views&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+
+&lt;span class="n"&gt;html_template&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"""&lt;/span&gt;
+&lt;span class="s2"&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+&lt;span class="s2"&gt;  &amp;lt;head&amp;gt;&lt;/span&gt;
+
+&lt;span class="s2"&gt;    &amp;lt;title&amp;gt;Widget export&amp;lt;/title&amp;gt;&lt;/span&gt;
+
+&lt;span class="s2"&gt;    &amp;lt;!-- Load RequireJS, used by the IPywidgets for dependency management --&amp;gt;&lt;/span&gt;
+&lt;span class="s2"&gt;    &amp;lt;script &lt;/span&gt;
+&lt;span class="s2"&gt;      src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js" &lt;/span&gt;
+&lt;span class="s2"&gt;      integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" &lt;/span&gt;
+&lt;span class="s2"&gt;      crossorigin="anonymous"&amp;gt;&lt;/span&gt;
+&lt;span class="s2"&gt;    &amp;lt;/script&amp;gt;&lt;/span&gt;
+
+&lt;span class="s2"&gt;    &amp;lt;!-- Load IPywidgets bundle for embedding. --&amp;gt;&lt;/span&gt;
+&lt;span class="s2"&gt;    &amp;lt;script&lt;/span&gt;
+&lt;span class="s2"&gt;      data-jupyter-widgets-cdn="https://cdn.jsdelivr.net/npm/"&lt;/span&gt;
+&lt;span class="s2"&gt;      src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" &lt;/span&gt;
+&lt;span class="s2"&gt;      crossorigin="anonymous"&amp;gt;&lt;/span&gt;
+&lt;span class="s2"&gt;    &amp;lt;/script&amp;gt;&lt;/span&gt;
+
+&lt;span class="s2"&gt;    &amp;lt;!-- The state of all the widget models on the page --&amp;gt;&lt;/span&gt;
+&lt;span class="s2"&gt;    &amp;lt;script type="application/vnd.jupyter.widget-state+json"&amp;gt;&lt;/span&gt;
+&lt;span class="s2"&gt;      &lt;/span&gt;&lt;span class="si"&gt;{manager_state}&lt;/span&gt;&lt;span class="s2"&gt;&lt;/span&gt;
+&lt;span class="s2"&gt;    &amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class="s2"&gt;  &amp;lt;/head&amp;gt;&lt;/span&gt;
+
+&lt;span class="s2"&gt;  &amp;lt;body&amp;gt;&lt;/span&gt;
+
+&lt;span class="s2"&gt;    &amp;lt;h1&amp;gt;Widget export&amp;lt;/h1&amp;gt;&lt;/span&gt;
+
+&lt;span class="s2"&gt;    &amp;lt;div id="first-slider-widget"&amp;gt;&lt;/span&gt;
+&lt;span class="s2"&gt;      &amp;lt;!-- This script tag will be replaced by the view's DOM tree --&amp;gt;&lt;/span&gt;
+&lt;span class="s2"&gt;      &amp;lt;script type="application/vnd.jupyter.widget-view+json"&amp;gt;&lt;/span&gt;
+&lt;span class="s2"&gt;        &lt;/span&gt;&lt;span class="si"&gt;{widget_views[0]}&lt;/span&gt;&lt;span class="s2"&gt;&lt;/span&gt;
+&lt;span class="s2"&gt;      &amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class="s2"&gt;    &amp;lt;/div&amp;gt;&lt;/span&gt;
+
+&lt;span class="s2"&gt;    &amp;lt;hrule /&amp;gt;&lt;/span&gt;
+
+&lt;span class="s2"&gt;    &amp;lt;div id="second-slider-widget"&amp;gt;&lt;/span&gt;
+&lt;span class="s2"&gt;      &amp;lt;!-- This script tag will be replaced by the view's DOM tree --&amp;gt;&lt;/span&gt;
+&lt;span class="s2"&gt;      &amp;lt;script type="application/vnd.jupyter.widget-view+json"&amp;gt;&lt;/span&gt;
+&lt;span class="s2"&gt;        &lt;/span&gt;&lt;span class="si"&gt;{widget_views[1]}&lt;/span&gt;&lt;span class="s2"&gt;&lt;/span&gt;
+&lt;span class="s2"&gt;      &amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class="s2"&gt;    &amp;lt;/div&amp;gt;&lt;/span&gt;
+
+&lt;span class="s2"&gt;  &amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class="s2"&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;span class="s2"&gt;"""&lt;/span&gt;
+
+&lt;span class="n"&gt;manager_state&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;json&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dumps&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'manager_state'&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="n"&gt;widget_views&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;json&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dumps&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;view&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;view&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'view_specs'&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt;
+&lt;span class="n"&gt;rendered_template&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;html_template&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;manager_state&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;manager_state&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;widget_views&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;widget_views&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'export.html'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'w'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;fp&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;fp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;rendered_template&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;script type="application/vnd.jupyter.widget-state+json"&gt;
+{"state": {"c083cbbf385f44c38619976bd0ffe862": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "86ef9f5bbc044996a24cde1699cd62ea": {"model_module": "@jupyter-widgets/controls", "state": {"style": "IPY_MODEL_1d7e71b38dec4056b2eb866761b1fa09", "layout": "IPY_MODEL_986eba7f61624edbbce62142954fbd5f", "value": 40}, "model_module_version": "1.2.0", "model_name": "IntSliderModel"}, "5bc491b789a14940b3e476cbc9b9b345": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "33b52a7db80e4bf1afae05f412baa678": {"model_module": "@jupyter-widgets/controls", "state": {"_dom_classes": ["widget-interact"], "children": ["IPY_MODEL_cd99ad7ec6314fc4b1b4f828657ff68d", "IPY_MODEL_abbfc68044044ed599e3dae6cff011c9"], "layout": "IPY_MODEL_f4c7dde0925d4520af0a26927d977290"}, "model_module_version": "1.2.0", "model_name": "VBoxModel"}, "14ffda4791984fe783208217ed795671": {"model_module": "@jupyter-widgets/controls", "state": {"_dom_classes": ["widget-interact"], "children": ["IPY_MODEL_d25549492b6c4fe2bce559ec8e2e731d", "IPY_MODEL_7cdcd466412d4b17bd7d69aca46f851d"], "layout": "IPY_MODEL_677bf0f236f646178f846b408457ac72"}, "model_module_version": "1.2.0", "model_name": "VBoxModel"}, "424bb23d18f64508a8927bd6d3d291d9": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "aa7fd3816d454b328048482de0116280": {"model_module": "@jupyter-widgets/controls", "state": {"description": "x", "style": "IPY_MODEL_d43113faed6d4dff88c67210b445d23b", "layout": "IPY_MODEL_61fa8a496181454481404a1812d5b3f5", "index": 0, "_options_labels": ["All", "NotAll"]}, "model_module_version": "1.2.0", "model_name": "SelectModel"}, "789c97ca4770488b90ce1ce95242741c": {"model_module": "@jupyter-widgets/controls", "state": {"_dom_classes": ["widget-interact"], "children": ["IPY_MODEL_4a27721868e2463e8077a4744db773a9", "IPY_MODEL_ddf7460e8d284e1fbdb2640acd17a0c8"], "layout": "IPY_MODEL_bd559ae3be234a13bc32378e6b1bbe91"}, "model_module_version": "1.2.0", "model_name": "VBoxModel"}, "06cf34b6078544f08e147eb4cfbf0eef": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "28e412449cac45aebf96060d904483bd": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "0bdc2b4185c84f40b980815b756ebcd9": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "6ee5c656d88a44ef80a0dd7de49bd555": {"model_module": "@jupyter-widgets/controls", "state": {"description_width": ""}, "model_module_version": "1.2.0", "model_name": "SliderStyleModel"}, "78adef747a3b496987c1c152474fe133": {"model_module": "@jupyter-widgets/output", "state": {"layout": "IPY_MODEL_b49a961b57d8451483d6591484a02b1a", "outputs": [{"data": {"text/plain": "2"}, "output_type": "display_data", "metadata": {}}]}, "model_module_version": "1.0.0", "model_name": "OutputModel"}, "d3f3308058114b268d238a991253bd31": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "d25549492b6c4fe2bce559ec8e2e731d": {"model_module": "@jupyter-widgets/controls", "state": {"min": -10, "layout": "IPY_MODEL_319dc81948b246248d7529b7b44cbb23", "description": "x", "style": "IPY_MODEL_6905ba2b0c624cd9b1c47076ae55c483", "max": 30, "value": 30}, "model_module_version": "1.2.0", "model_name": "IntSliderModel"}, "18e36ed7bc534e71b3d70b46974eff7e": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "1422917b7c714e4e8034df34d2ee9ada": {"model_module": "@jupyter-widgets/controls", "state": {"description": "a", "style": "IPY_MODEL_2c5fb286479e4ea194317a5b89dfb14b", "layout": "IPY_MODEL_5ccf1a64825e409abc581bebe02f3b64", "value": 21}, "model_module_version": "1.2.0", "model_name": "IntSliderModel"}, "61fa8a496181454481404a1812d5b3f5": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "386119d4a46642f0b303aac01c14f353": {"model_module": "@jupyter-widgets/controls", "state": {"_dom_classes": ["widget-interact"], "children": ["IPY_MODEL_e5d1950500b843dcb8daa2d0c2cdb149", "IPY_MODEL_ce63fd370b5444a3857dd2c58b81ed23"], "layout": "IPY_MODEL_2a35c29aa33f434daf9c2d3f6dfab320"}, "model_module_version": "1.2.0", "model_name": "VBoxModel"}, "f3a3f064cc954c53a206a75cf8ee561f": {"model_module": "@jupyter-widgets/output", "state": {"layout": "IPY_MODEL_f89c9a3ff0d54bd7b8be3547c9db7ece", "outputs": [{"data": {"text/plain": "IntSlider(value=61, description='a')", "application/vnd.jupyter.widget-view+json": {"version_major": 2, "model_id": "1422917b7c714e4e8034df34d2ee9ada", "version_minor": 0}}, "output_type": "display_data", "metadata": {}}]}, "model_module_version": "1.0.0", "model_name": "OutputModel"}, "379caf83405246adb88b36dd713c9718": {"model_module": "@jupyter-widgets/controls", "state": {"description_width": ""}, "model_module_version": "1.2.0", "model_name": "SliderStyleModel"}, "112fcc0a757840f7b19cf3fa782b7e4f": {"model_module": "@jupyter-widgets/controls", "state": {"_dom_classes": ["widget-interact"], "children": ["IPY_MODEL_e5bf8063bf8a4e8cbee5e532f4098c19", "IPY_MODEL_bb074931bd6f4ce08480da5742609b43"], "layout": "IPY_MODEL_1d851309865644179feba14b1b0e5fec"}, "model_module_version": "1.2.0", "model_name": "VBoxModel"}, "4c240fae75eb4aafa5609805c2ad252c": {"model_module": "@jupyter-widgets/controls", "state": {"description_width": ""}, "model_module_version": "1.2.0", "model_name": "SliderStyleModel"}, "59d75448f99f4550a432a491ba0b80d0": {"model_module": "@jupyter-widgets/controls", "state": {"description_width": ""}, "model_module_version": "1.2.0", "model_name": "SliderStyleModel"}, "429e81ae1299458aa206a038a9e8c16c": {"model_module": "@jupyter-widgets/controls", "state": {"_dom_classes": ["widget-interact"], "children": ["IPY_MODEL_f2ea445f3a7c4538a7f8ee2d8354befb", "IPY_MODEL_d5b6ae21f92e408e8cbc782760f385b5"], "layout": "IPY_MODEL_5c017d99ce2e44ddbd9d1e425b2fd68a"}, "model_module_version": "1.2.0", "model_name": "VBoxModel"}, "5769e859c9094ee2afdaa8a55fee9e77": {"model_module": "@jupyter-widgets/controls", "state": {"description_width": ""}, "model_module_version": "1.2.0", "model_name": "SliderStyleModel"}, "8509ed225f854311ba4cf87901851ace": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "5c017d99ce2e44ddbd9d1e425b2fd68a": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "9c7b5c29b4014739862c8ff12a724b4d": {"model_module": "@jupyter-widgets/controls", "state": {"_dom_classes": ["widget-interact"], "children": ["IPY_MODEL_b5cdc2333e06435487380ada774eb043", "IPY_MODEL_78adef747a3b496987c1c152474fe133"], "layout": "IPY_MODEL_28e412449cac45aebf96060d904483bd"}, "model_module_version": "1.2.0", "model_name": "VBoxModel"}, "be1fef88c2c7433e9b2b09162f8354eb": {"model_module": "@jupyter-widgets/output", "state": {"layout": "IPY_MODEL_0d0dd531a14e41d48c20a6f9d68b6d5d", "outputs": [{"data": {"text/plain": "-10"}, "output_type": "display_data", "metadata": {}}]}, "model_module_version": "1.0.0", "model_name": "OutputModel"}, "4b52320e5dd04a718e8ffeb7fdabfcf3": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "795882674dce47ffa74e71dcbd48e222": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "1d7e71b38dec4056b2eb866761b1fa09": {"model_module": "@jupyter-widgets/controls", "state": {"description_width": ""}, "model_module_version": "1.2.0", "model_name": "SliderStyleModel"}, "02f01437255d44ab9cdeb3fc6bb1a551": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "64924a4ae7bd46c08c7745dccfe8bce1": {"model_module": "@jupyter-widgets/output", "state": {"layout": "IPY_MODEL_f11802c0b9414c05adacc436f18b8313", "outputs": [{"data": {"text/plain": "2"}, "output_type": "display_data", "metadata": {}}]}, "model_module_version": "1.0.0", "model_name": "OutputModel"}, "3e4f2e92978642e2ae6e1774fdf862e9": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "1d851309865644179feba14b1b0e5fec": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "c07dcbfbbd5a4f958d54a4a2b88ba1b6": {"model_module": "@jupyter-widgets/controls", "state": {"children": ["IPY_MODEL_1422917b7c714e4e8034df34d2ee9ada", "IPY_MODEL_0b6e521955cf4dd7a93bb04bdf42573d", "IPY_MODEL_d82cea7db454414892cde4009e7f03c5"], "layout": "IPY_MODEL_c3401bc21624495c9d4ba04b0f0d5549"}, "model_module_version": "1.2.0", "model_name": "VBoxModel"}, "bd559ae3be234a13bc32378e6b1bbe91": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "cadb4256d9a74453871b33a5542e1d56": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "ddf7460e8d284e1fbdb2640acd17a0c8": {"model_module": "@jupyter-widgets/output", "state": {"layout": "IPY_MODEL_2f5f2527613d40d6ac55ed7c36e3747c", "outputs": [{"data": {"text/plain": "IntSlider(value=51, description='a')", "application/vnd.jupyter.widget-view+json": {"version_major": 2, "model_id": "1422917b7c714e4e8034df34d2ee9ada", "version_minor": 0}}, "output_type": "display_data", "metadata": {}}]}, "model_module_version": "1.0.0", "model_name": "OutputModel"}, "3f00d010e06b4b739b75f7b9b5aceb52": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "d5b6ae21f92e408e8cbc782760f385b5": {"model_module": "@jupyter-widgets/output", "state": {"layout": "IPY_MODEL_b927dd994ecb4b508a4c4ce026ba9cf1", "outputs": [{"data": {"text/plain": "2"}, "output_type": "display_data", "metadata": {}}]}, "model_module_version": "1.0.0", "model_name": "OutputModel"}, "6c69d3feed99494bb9fa21873282e08f": {"model_module": "@jupyter-widgets/controls", "state": {"_dom_classes": ["widget-interact"], "children": ["IPY_MODEL_aa7fd3816d454b328048482de0116280", "IPY_MODEL_b7d29478a9d944708b185c64b71aa420"], "layout": "IPY_MODEL_3e4f2e92978642e2ae6e1774fdf862e9"}, "model_module_version": "1.2.0", "model_name": "VBoxModel"}, "cd99ad7ec6314fc4b1b4f828657ff68d": {"model_module": "@jupyter-widgets/controls", "state": {"min": -10, "layout": "IPY_MODEL_888f876aa1cc42ca994191ac4dd2a8b6", "description": "x", "style": "IPY_MODEL_4c240fae75eb4aafa5609805c2ad252c", "max": 30, "value": 10}, "model_module_version": "1.2.0", "model_name": "IntSliderModel"}, "0325e078b73e432f80c13888b70fae80": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "677bf0f236f646178f846b408457ac72": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "6ca114bbf0264707835116543abd06dc": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "3091c7132b5649ceb68de0d3e81d2279": {"model_module": "@jupyter-widgets/controls", "state": {"style": "IPY_MODEL_379caf83405246adb88b36dd713c9718", "layout": "IPY_MODEL_1c7f9b26dfe8414ea875b12f96a0dd67", "value": 40}, "model_module_version": "1.2.0", "model_name": "IntSliderModel"}, "1653f2a9b8b744c9976b70b8e1c9b536": {"model_module": "@jupyter-widgets/controls", "state": {"_dom_classes": ["widget-interact"], "children": ["IPY_MODEL_d546d8af26d54fc9922d31f30a7affe5", "IPY_MODEL_64924a4ae7bd46c08c7745dccfe8bce1"], "layout": "IPY_MODEL_35712e2526e74d1dbaf11df9c6cf7416"}, "model_module_version": "1.2.0", "model_name": "VBoxModel"}, "319dc81948b246248d7529b7b44cbb23": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "2823d828fa91494c8d754f7fdca938e6": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "de5aceae646b4edba5cf2e9a2ff571f5": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "b5cdc2333e06435487380ada774eb043": {"model_module": "@jupyter-widgets/controls", "state": {"min": -10, "layout": "IPY_MODEL_036459f5a81a49f882a991dcc1586985", "description": "x", "style": "IPY_MODEL_7c2d5774cd8a434ca4bdc87ea523583a", "max": 30, "value": 10}, "model_module_version": "1.2.0", "model_name": "IntSliderModel"}, "f4c7dde0925d4520af0a26927d977290": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "b927dd994ecb4b508a4c4ce026ba9cf1": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "2446bee7bbe141b886e3feba3c32acd0": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "5ccf1a64825e409abc581bebe02f3b64": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "f11802c0b9414c05adacc436f18b8313": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "35712e2526e74d1dbaf11df9c6cf7416": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "036459f5a81a49f882a991dcc1586985": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "9dfd75c43a1344f59eb5bb348e620fda": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "484631300b0f44eb862838bdd6bc180c": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "888f876aa1cc42ca994191ac4dd2a8b6": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "d8c1dda7a3b34ccf925fbbf01cdef950": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "2a35c29aa33f434daf9c2d3f6dfab320": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "986eba7f61624edbbce62142954fbd5f": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "2dee1585fc444d47aa6a673acbe4bf4e": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "abbfc68044044ed599e3dae6cff011c9": {"model_module": "@jupyter-widgets/output", "state": {"layout": "IPY_MODEL_5bc491b789a14940b3e476cbc9b9b345", "outputs": [{"data": {"text/plain": "2"}, "output_type": "display_data", "metadata": {}}]}, "model_module_version": "1.0.0", "model_name": "OutputModel"}, "bb074931bd6f4ce08480da5742609b43": {"model_module": "@jupyter-widgets/output", "state": {"layout": "IPY_MODEL_424bb23d18f64508a8927bd6d3d291d9", "outputs": [{"data": {"text/plain": "2"}, "output_type": "display_data", "metadata": {}}]}, "model_module_version": "1.0.0", "model_name": "OutputModel"}, "2f3e55d310984c3194929d11a9d163c3": {"model_module": "@jupyter-widgets/controls", "state": {"description_width": ""}, "model_module_version": "1.2.0", "model_name": "SliderStyleModel"}, "3520db4f725c459ca299363797eea484": {"model_module": "@jupyter-widgets/controls", "state": {"description_width": ""}, "model_module_version": "1.2.0", "model_name": "SliderStyleModel"}, "65cae1b66ef94d03bf5229e6e9a33a90": {"model_module": "@jupyter-widgets/output", "state": {"layout": "IPY_MODEL_6ca114bbf0264707835116543abd06dc", "outputs": [{"data": {"text/plain": "2"}, "output_type": "display_data", "metadata": {}}]}, "model_module_version": "1.0.0", "model_name": "OutputModel"}, "b7d29478a9d944708b185c64b71aa420": {"model_module": "@jupyter-widgets/output", "state": {"layout": "IPY_MODEL_d3f3308058114b268d238a991253bd31"}, "model_module_version": "1.0.0", "model_name": "OutputModel"}, "f2ea445f3a7c4538a7f8ee2d8354befb": {"model_module": "@jupyter-widgets/controls", "state": {"min": -10, "layout": "IPY_MODEL_c083cbbf385f44c38619976bd0ffe862", "description": "x", "style": "IPY_MODEL_2f3e55d310984c3194929d11a9d163c3", "max": 30, "value": 10}, "model_module_version": "1.2.0", "model_name": "IntSliderModel"}, "7c2d5774cd8a434ca4bdc87ea523583a": {"model_module": "@jupyter-widgets/controls", "state": {"description_width": ""}, "model_module_version": "1.2.0", "model_name": "SliderStyleModel"}, "0b6e521955cf4dd7a93bb04bdf42573d": {"model_module": "@jupyter-widgets/controls", "state": {"description": "b", "style": "IPY_MODEL_11c7746f7ac34f46b45ef58a9111b361", "layout": "IPY_MODEL_3f00d010e06b4b739b75f7b9b5aceb52", "value": 33}, "model_module_version": "1.2.0", "model_name": "IntSliderModel"}, "be3fb43c024c47a88cd1fcd8a22c4d62": {"model_module": "@jupyter-widgets/output", "state": {"layout": "IPY_MODEL_484631300b0f44eb862838bdd6bc180c", "outputs": [{"data": {"text/plain": "2"}, "output_type": "display_data", "metadata": {}}]}, "model_module_version": "1.0.0", "model_name": "OutputModel"}, "ba28f77fd405413c871845f68a40df88": {"model_module": "@jupyter-widgets/controls", "state": {"description_width": ""}, "model_module_version": "1.2.0", "model_name": "SliderStyleModel"}, "11c7746f7ac34f46b45ef58a9111b361": {"model_module": "@jupyter-widgets/controls", "state": {"description_width": ""}, "model_module_version": "1.2.0", "model_name": "SliderStyleModel"}, "6905ba2b0c624cd9b1c47076ae55c483": {"model_module": "@jupyter-widgets/controls", "state": {"description_width": ""}, "model_module_version": "1.2.0", "model_name": "SliderStyleModel"}, "e5d1950500b843dcb8daa2d0c2cdb149": {"model_module": "@jupyter-widgets/controls", "state": {"description": "x", "style": "IPY_MODEL_7766c75f22bf433e9a9b5a8140bfa4b0", "layout": "IPY_MODEL_8509ed225f854311ba4cf87901851ace", "index": 0, "_options_labels": ["All", "NotAll"]}, "model_module_version": "1.2.0", "model_name": "SelectModel"}, "e1db1ec846f54e9782152552f32663ce": {"model_module": "@jupyter-widgets/controls", "state": {"min": -10, "layout": "IPY_MODEL_0325e078b73e432f80c13888b70fae80", "description": "x", "style": "IPY_MODEL_5769e859c9094ee2afdaa8a55fee9e77", "max": 30, "value": 10}, "model_module_version": "1.2.0", "model_name": "IntSliderModel"}, "7cdcd466412d4b17bd7d69aca46f851d": {"model_module": "@jupyter-widgets/output", "state": {"layout": "IPY_MODEL_795882674dce47ffa74e71dcbd48e222", "outputs": [{"data": {"text/plain": "2"}, "output_type": "display_data", "metadata": {}}]}, "model_module_version": "1.0.0", "model_name": "OutputModel"}, "2c5fb286479e4ea194317a5b89dfb14b": {"model_module": "@jupyter-widgets/controls", "state": {"description_width": ""}, "model_module_version": "1.2.0", "model_name": "SliderStyleModel"}, "445008c289634b7e85f9a27c0ccf81d7": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "f7569da949f14f7ba4955f7ed36d4f93": {"model_module": "@jupyter-widgets/controls", "state": {"_dom_classes": ["widget-interact"], "children": ["IPY_MODEL_f28596ccd37844ef8e40fe618d9983d7", "IPY_MODEL_be3fb43c024c47a88cd1fcd8a22c4d62"], "layout": "IPY_MODEL_5134c9cc4326459ea7166b6e9f21679c"}, "model_module_version": "1.2.0", "model_name": "VBoxModel"}, "b49a961b57d8451483d6591484a02b1a": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "e5f453a64cf5447787ecac4d073793b2": {"model_module": "@jupyter-widgets/output", "state": {"layout": "IPY_MODEL_445008c289634b7e85f9a27c0ccf81d7", "outputs": [{"name": "stdout", "text": "21*33*73=50589\n", "output_type": "stream"}]}, "model_module_version": "1.0.0", "model_name": "OutputModel"}, "a1bc83937fe84dcf9b4c9ffbfe2bb04e": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "4a27721868e2463e8077a4744db773a9": {"model_module": "@jupyter-widgets/controls", "state": {"min": -10, "layout": "IPY_MODEL_06cf34b6078544f08e147eb4cfbf0eef", "description": "x", "style": "IPY_MODEL_93b96929d46c425dbc352d9d43d1a320", "max": 30, "value": 9}, "model_module_version": "1.2.0", "model_name": "IntSliderModel"}, "2f5f2527613d40d6ac55ed7c36e3747c": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "34a85d9a173847ccab1a5c2581c064b7": {"model_module": "@jupyter-widgets/controls", "state": {"description": "x", "style": "IPY_MODEL_c7566bc3f2e04fd29ac5b4b16d2a877d", "layout": "IPY_MODEL_2446bee7bbe141b886e3feba3c32acd0", "index": 1, "_options_labels": ["All", "NotAll"]}, "model_module_version": "1.2.0", "model_name": "SelectModel"}, "f219de5d66f64b5b81f5696f5a52211e": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "e5bf8063bf8a4e8cbee5e532f4098c19": {"model_module": "@jupyter-widgets/controls", "state": {"min": -10, "layout": "IPY_MODEL_cadb4256d9a74453871b33a5542e1d56", "description": "x", "style": "IPY_MODEL_ba28f77fd405413c871845f68a40df88", "max": 30, "value": -1}, "model_module_version": "1.2.0", "model_name": "IntSliderModel"}, "7766c75f22bf433e9a9b5a8140bfa4b0": {"model_module": "@jupyter-widgets/controls", "state": {"description_width": ""}, "model_module_version": "1.2.0", "model_name": "DescriptionStyleModel"}, "d546d8af26d54fc9922d31f30a7affe5": {"model_module": "@jupyter-widgets/controls", "state": {"min": -10, "layout": "IPY_MODEL_de5aceae646b4edba5cf2e9a2ff571f5", "description": "x", "style": "IPY_MODEL_e597cce4f67c46869030fd5418aa45d3", "max": 30, "value": 10}, "model_module_version": "1.2.0", "model_name": "IntSliderModel"}, "49ceeaa6953e497983dfc8904c05c5a5": {"model_module": "@jupyter-widgets/controls", "state": {"_dom_classes": ["widget-interact"], "children": ["IPY_MODEL_34a85d9a173847ccab1a5c2581c064b7", "IPY_MODEL_a11c8d9d25de487e829375489da9fe7a"], "layout": "IPY_MODEL_0bdc2b4185c84f40b980815b756ebcd9"}, "model_module_version": "1.2.0", "model_name": "VBoxModel"}, "ce63fd370b5444a3857dd2c58b81ed23": {"model_module": "@jupyter-widgets/output", "state": {"layout": "IPY_MODEL_9dfd75c43a1344f59eb5bb348e620fda"}, "model_module_version": "1.0.0", "model_name": "OutputModel"}, "098d3bcf96f64c7ab77905752c02f7f7": {"model_module": "@jupyter-widgets/controls", "state": {"min": -10, "layout": "IPY_MODEL_a1bc83937fe84dcf9b4c9ffbfe2bb04e", "description": "x", "style": "IPY_MODEL_65b2d5a5217846e4a58dd3c9d7104e35", "max": 30, "value": 11}, "model_module_version": "1.2.0", "model_name": "IntSliderModel"}, "27f564980e4b43ef96d75c23b1514fd9": {"model_module": "@jupyter-widgets/controls", "state": {"style": "IPY_MODEL_59d75448f99f4550a432a491ba0b80d0", "layout": "IPY_MODEL_f219de5d66f64b5b81f5696f5a52211e", "value": 51}, "model_module_version": "1.2.0", "model_name": "IntSliderModel"}, "a11c8d9d25de487e829375489da9fe7a": {"model_module": "@jupyter-widgets/output", "state": {"layout": "IPY_MODEL_fd7f6450e09642cbb6244376d9d050b6"}, "model_module_version": "1.0.0", "model_name": "OutputModel"}, "f28596ccd37844ef8e40fe618d9983d7": {"model_module": "@jupyter-widgets/controls", "state": {"min": -10, "layout": "IPY_MODEL_2dee1585fc444d47aa6a673acbe4bf4e", "description": "x", "style": "IPY_MODEL_3520db4f725c459ca299363797eea484", "max": 30, "value": 10}, "model_module_version": "1.2.0", "model_name": "IntSliderModel"}, "d43113faed6d4dff88c67210b445d23b": {"model_module": "@jupyter-widgets/controls", "state": {"description_width": ""}, "model_module_version": "1.2.0", "model_name": "DescriptionStyleModel"}, "524f320cc27a474babb9a83d0df38994": {"model_module": "@jupyter-widgets/controls", "state": {"description_width": ""}, "model_module_version": "1.2.0", "model_name": "SliderStyleModel"}, "1c7f9b26dfe8414ea875b12f96a0dd67": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "65b2d5a5217846e4a58dd3c9d7104e35": {"model_module": "@jupyter-widgets/controls", "state": {"description_width": ""}, "model_module_version": "1.2.0", "model_name": "SliderStyleModel"}, "cdc9ba57985546a98fbd1b9f43a26b17": {"model_module": "@jupyter-widgets/controls", "state": {"description_width": ""}, "model_module_version": "1.2.0", "model_name": "SliderStyleModel"}, "73b91f0ae38d418d8a2599dbff64a21d": {"model_module": "@jupyter-widgets/controls", "state": {"_dom_classes": ["widget-interact"], "children": ["IPY_MODEL_e1db1ec846f54e9782152552f32663ce", "IPY_MODEL_65cae1b66ef94d03bf5229e6e9a33a90"], "layout": "IPY_MODEL_3326ff8755d24943945524aeaaee5a16"}, "model_module_version": "1.2.0", "model_name": "VBoxModel"}, "c7566bc3f2e04fd29ac5b4b16d2a877d": {"model_module": "@jupyter-widgets/controls", "state": {"description_width": ""}, "model_module_version": "1.2.0", "model_name": "DescriptionStyleModel"}, "93b96929d46c425dbc352d9d43d1a320": {"model_module": "@jupyter-widgets/controls", "state": {"description_width": ""}, "model_module_version": "1.2.0", "model_name": "SliderStyleModel"}, "a843b39c8ff042d487c386974f75fbf8": {"model_module": "@jupyter-widgets/controls", "state": {"children": ["IPY_MODEL_c07dcbfbbd5a4f958d54a4a2b88ba1b6", "IPY_MODEL_e5f453a64cf5447787ecac4d073793b2"], "layout": "IPY_MODEL_d8c1dda7a3b34ccf925fbbf01cdef950"}, "model_module_version": "1.2.0", "model_name": "HBoxModel"}, "11ae4805b42941f8bc57c4cb75bee305": {"model_module": "@jupyter-widgets/controls", "state": {"_dom_classes": ["widget-interact"], "children": ["IPY_MODEL_de680c3e4e77443bb4087f49b5a69c2c", "IPY_MODEL_be1fef88c2c7433e9b2b09162f8354eb"], "layout": "IPY_MODEL_4b52320e5dd04a718e8ffeb7fdabfcf3"}, "model_module_version": "1.2.0", "model_name": "VBoxModel"}, "ea86dc2551264b0cb7b7bd04dda2482f": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "3326ff8755d24943945524aeaaee5a16": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "f89c9a3ff0d54bd7b8be3547c9db7ece": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "d88235ee8ba0496195f4df562a62b037": {"model_module": "@jupyter-widgets/controls", "state": {"style": "IPY_MODEL_6ee5c656d88a44ef80a0dd7de49bd555", "layout": "IPY_MODEL_ea86dc2551264b0cb7b7bd04dda2482f", "value": 59}, "model_module_version": "1.2.0", "model_name": "IntSliderModel"}, "e597cce4f67c46869030fd5418aa45d3": {"model_module": "@jupyter-widgets/controls", "state": {"description_width": ""}, "model_module_version": "1.2.0", "model_name": "SliderStyleModel"}, "5134c9cc4326459ea7166b6e9f21679c": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "fd7f6450e09642cbb6244376d9d050b6": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "c3401bc21624495c9d4ba04b0f0d5549": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "0d0dd531a14e41d48c20a6f9d68b6d5d": {"model_module": "@jupyter-widgets/base", "state": {}, "model_module_version": "1.0.0", "model_name": "LayoutModel"}, "fa234cad0cfa47779d7e316d7d87398b": {"model_module": "@jupyter-widgets/controls", "state": {"_dom_classes": ["widget-interact"], "children": ["IPY_MODEL_098d3bcf96f64c7ab77905752c02f7f7", "IPY_MODEL_f3a3f064cc954c53a206a75cf8ee561f"], "layout": "IPY_MODEL_2823d828fa91494c8d754f7fdca938e6"}, "model_module_version": "1.2.0", "model_name": "VBoxModel"}, "d82cea7db454414892cde4009e7f03c5": {"model_module": "@jupyter-widgets/controls", "state": {"description": "c", "style": "IPY_MODEL_cdc9ba57985546a98fbd1b9f43a26b17", "layout": "IPY_MODEL_02f01437255d44ab9cdeb3fc6bb1a551", "value": 73}, "model_module_version": "1.2.0", "model_name": "IntSliderModel"}, "de680c3e4e77443bb4087f49b5a69c2c": {"model_module": "@jupyter-widgets/controls", "state": {"min": -10, "layout": "IPY_MODEL_18e36ed7bc534e71b3d70b46974eff7e", "description": "x", "style": "IPY_MODEL_524f320cc27a474babb9a83d0df38994", "max": 30, "value": -10}, "model_module_version": "1.2.0", "model_name": "IntSliderModel"}}, "version_major": 2, "version_minor": 0}
+&lt;/script&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['$','$'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        " linebreaks: { automatic: true, width: '95% container' }, " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;
+</summary></entry></feed>
