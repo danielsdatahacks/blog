@@ -6497,7 +6497,7 @@ a.bg-inverse:focus, a.bg-inverse:hover {
 }
 
 .text-lowercase {
-  text-transform: lowercase !important;
+  text-transform: none !important;
 }
 
 .text-uppercase {
