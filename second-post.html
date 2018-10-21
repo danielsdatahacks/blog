@@ -26,8 +26,21 @@
   <link rel="stylesheet" href="https://danielsdatahacks.github.io/theme/css/pygments/lovelace.min.css">
   <link rel="stylesheet" href="https://danielsdatahacks.github.io/theme/css/style.css">
   <!-- delete the In and Out prompts of cells -->
-  <style>
+ <style>
 	div.prompt {display:none}
+  </style>
+  <!--Change size of output cell -->
+  <style>
+  	div.output_subarea {
+  	overflow-x: auto;
+  	padding: 0.4em;
+  	/* Old browsers */
+  	-webkit-box-flex: 1;
+  	-moz-box-flex: 1;
+  	box-flex: 1;
+  	/* Modern browsers */
+  	flex: 1;
+  	max-width: 100% !important;}
   </style>
   <!-- change the distance between cells -->
   <style>
@@ -1074,25 +1087,25 @@ h6:hover .anchor-link {
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div id="d66ad17c-630d-468c-bebc-1da3a0b75f87"></div>
+<div id="14eafc9e-9f40-42b9-a050-31cf8db6896b"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#d66ad17c-630d-468c-bebc-1da3a0b75f87');
+var element = $('#14eafc9e-9f40-42b9-a050-31cf8db6896b');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "8545d22c05bd4993a2e8082a227bc9de", "version_minor": 0, "version_major": 2}
+{"version_minor": 0, "version_major": 2, "model_id": "8545d22c05bd4993a2e8082a227bc9de"}
 </script>
 </div>
 </div>
 <div class="output_area">
 <div class="prompt"></div>
-<div id="ec644928-d450-4d1e-af22-a8b0006ee5c5"></div>
+<div id="5d888a6f-970d-44e5-bd39-3f66ac10e368"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#ec644928-d450-4d1e-af22-a8b0006ee5c5');
+var element = $('#5d888a6f-970d-44e5-bd39-3f66ac10e368');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "3e8cbd2bb8904e7f8d6f254fb8803a92", "version_minor": 0, "version_major": 2}
+{"version_minor": 0, "version_major": 2, "model_id": "3e8cbd2bb8904e7f8d6f254fb8803a92"}
 </script>
 </div>
 </div>
@@ -1108,7 +1121,7 @@ var element = $('#ec644928-d450-4d1e-af22-a8b0006ee5c5');
 </div>
 </div>
 <script type="application/vnd.jupyter.widget-state+json">
-{"version_minor": 0, "state": {"4e5d2489a20f4fefb956786899ff3cda": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.0.0", "state": {}}, "56af16afc2a9488081c1a82be250f927": {"model_module": "@jupyter-widgets/controls", "model_name": "SliderStyleModel", "model_module_version": "1.2.0", "state": {"description_width": ""}}, "7b19e8faea36431090b8c4fc17655900": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.0.0", "state": {}}, "3e8cbd2bb8904e7f8d6f254fb8803a92": {"model_module": "@jupyter-widgets/output", "model_name": "OutputModel", "model_module_version": "1.0.0", "state": {"layout": "IPY_MODEL_4e5d2489a20f4fefb956786899ff3cda", "outputs": [{"output_type": "stream", "name": "stdout", "text": "37\n"}]}}, "8545d22c05bd4993a2e8082a227bc9de": {"model_module": "@jupyter-widgets/controls", "model_name": "IntSliderModel", "model_module_version": "1.2.0", "state": {"layout": "IPY_MODEL_7b19e8faea36431090b8c4fc17655900", "description": "a", "style": "IPY_MODEL_56af16afc2a9488081c1a82be250f927", "value": 37}}}, "version_major": 2}
+{"state": {"3e8cbd2bb8904e7f8d6f254fb8803a92": {"state": {"layout": "IPY_MODEL_4e5d2489a20f4fefb956786899ff3cda", "outputs": [{"name": "stdout", "output_type": "stream", "text": "37\n"}]}, "model_module": "@jupyter-widgets/output", "model_name": "OutputModel", "model_module_version": "1.0.0"}, "8545d22c05bd4993a2e8082a227bc9de": {"state": {"style": "IPY_MODEL_56af16afc2a9488081c1a82be250f927", "description": "a", "layout": "IPY_MODEL_7b19e8faea36431090b8c4fc17655900", "value": 37}, "model_module": "@jupyter-widgets/controls", "model_name": "IntSliderModel", "model_module_version": "1.2.0"}, "4e5d2489a20f4fefb956786899ff3cda": {"state": {}, "model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.0.0"}, "7b19e8faea36431090b8c4fc17655900": {"state": {}, "model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "model_module_version": "1.0.0"}, "56af16afc2a9488081c1a82be250f927": {"state": {"description_width": ""}, "model_module": "@jupyter-widgets/controls", "model_name": "SliderStyleModel", "model_module_version": "1.2.0"}}, "version_minor": 0, "version_major": 2}
 </script>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var mathjaxscript = document.createElement('script');

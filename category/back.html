@@ -26,8 +26,21 @@
   <link rel="stylesheet" href="https://danielsdatahacks.github.io/theme/css/pygments/lovelace.min.css">
   <link rel="stylesheet" href="https://danielsdatahacks.github.io/theme/css/style.css">
   <!-- delete the In and Out prompts of cells -->
-  <style>
+ <style>
 	div.prompt {display:none}
+  </style>
+  <!--Change size of output cell -->
+  <style>
+  	div.output_subarea {
+  	overflow-x: auto;
+  	padding: 0.4em;
+  	/* Old browsers */
+  	-webkit-box-flex: 1;
+  	-moz-box-flex: 1;
+  	box-flex: 1;
+  	/* Modern browsers */
+  	flex: 1;
+  	max-width: 100% !important;}
   </style>
   <!-- change the distance between cells -->
   <style>
