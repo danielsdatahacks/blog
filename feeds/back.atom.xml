@@ -975,9 +975,7 @@ h6:hover .anchor-link {
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;div style="text-align: justify"&gt;
-The most current and accurate global development data of our world is provided online by [The World Bank](https://datacatalog.worldbank.org/dataset/world-development-indicators). Unfortunately, one quickly becomes lost after downloading this dataset as there are over 10000 development indicators available for each country. To obtain a better overview of this dataset I programmed a dashboard that lets you explore the different indicators using a choropleth map. Additionally,  the development of two countries over time can be compared directly in a scatter plot.
-&lt;/div&gt;
+&lt;p&gt;The most current and accurate global development data of our world is provided online by &lt;a href="https://datacatalog.worldbank.org/dataset/world-development-indicators"&gt;The World Bank&lt;/a&gt;. Unfortunately, one quickly becomes lost after downloading this dataset as there are over 10000 development indicators available for each country. To obtain a better overview of this dataset I programmed a dashboard that lets you explore the different indicators using a choropleth map. Additionally,  the development of two countries over time can be compared directly in a scatter plot.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -993,9 +991,7 @@ The most current and accurate global development data of our world is provided o
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;div style="text-align: justify"&gt;
-The dashboard for the world development indicators consists of a multi-page app that programmed using [dash](https://plot.ly/products/dash/). The code for this project is available [here](https://github.com/danielsdatahacks/wdi-app-db_github). To run this dashboard locally in your browser just install the packages in the requirements.txt and run the command "python index.py" in your console. Currently, a simplified version of the dashboard showing only indicators of type "emission" and "energy" is hosted on [heroku](https://wdi-app-db.herokuapp.com) (Username: WDI_app, Password: 001D73). Notice that this dashboard is not designed for small smartphone screens.
-&lt;/div&gt;
+&lt;p&gt;The dashboard for the world development indicators consists of a multi-page app that programmed using &lt;a href="https://plot.ly/products/dash/"&gt;dash&lt;/a&gt;. The code for this project is available &lt;a href="https://github.com/danielsdatahacks/wdi-app-db_github"&gt;here&lt;/a&gt;. To run this dashboard locally in your browser just install the packages in the requirements.txt and run the command "python index.py" in your console. Currently, a simplified version of the dashboard showing only indicators of type "emission" and "energy" is hosted on &lt;a href="https://wdi-app-db.herokuapp.com"&gt;heroku&lt;/a&gt; (Username: WDI_app, Password: 001D73). Notice that this dashboard is not designed for small smartphone screens.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1011,9 +1007,7 @@ The dashboard for the world development indicators consists of a multi-page app 
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;div style="text-align: justify"&gt;
-The first part of my dashboard is called "Explore". It lets you quickly explore the data in a choropleth map to compare all countries for which the data is available. Just choose an indicator and a year and the choropleth map will update automatically. Below you can see a screenshot of this part of the dashboard. 
-&lt;/div&gt;
+&lt;p&gt;The first part of my dashboard is called "Explore". It lets you quickly explore the data in a choropleth map to compare all countries for which the data is available. Just choose an indicator and a year and the choropleth map will update automatically. Below you can see a screenshot of this part of the dashboard.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -7595,9 +7589,7 @@ oIACCiiggAIKKKCAAgoooIACCiiggAIKKKDAOoH/D3TOZGffZcitAAAAAElFTkSuQmCC
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;div style="text-align: justify"&gt;
-In this part of the dashboard two countries and an development indicator are chosen from dropdown menus. The scatterplot shows the development of the chosen countries over time. Below you can see a screenshot of this part of the dashboard.
-&lt;/div&gt;
+&lt;p&gt;In this part of the dashboard two countries and an development indicator are chosen from dropdown menus. The scatterplot shows the development of the chosen countries over time. Below you can see a screenshot of this part of the dashboard.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
