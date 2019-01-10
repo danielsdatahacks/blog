@@ -107,6 +107,9 @@ hr {
 div.text_cell_render {
     text-align: justify
 }
+.content {
+    text-align: justify
+}
 /* ------------------------------------------------------------------------- */
 /* 
 .article .content div.cell {
