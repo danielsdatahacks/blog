@@ -104,6 +104,9 @@ hr {
 .article .content a {
   text-decoration: underline
 }
+div.text_cell_render {
+    text-align: justify
+}
 /* ------------------------------------------------------------------------- */
 /* 
 .article .content div.cell {
